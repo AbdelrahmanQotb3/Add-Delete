@@ -3,10 +3,12 @@ import 'package:add_delete/custom_button.dart';
 import 'package:add_delete/custom_input.dart';
 import 'package:flutter/material.dart';
 void main(){
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget{
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -19,11 +21,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Add & Delete",
+      title: "Add & Delete" ,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueAccent,
-          title: Text("Contacts Screen", style: TextStyle(
+          title: const Text("Contacts Screen", style: TextStyle(
             fontSize: 25,
 
           ),),
@@ -40,25 +42,25 @@ class _MyAppState extends State<MyApp> {
                     Expanded(
                       child: CustomTextField(
                         Title: "Enter your Name here",
-                        icon: Icon(Icons.edit),
+                        icon: const Icon(Icons.edit),
                         Controller: name,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Row(
                   children: [
                     Expanded(
                       child: CustomTextField(
                         Title: "Enter your Phone here",
-                        icon: Icon(Icons.phone),
+                        icon: const Icon(Icons.phone),
                         Controller: phone,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Row(
                   children: [
                     Visibility(
@@ -71,7 +73,7 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 20,),
+                    const SizedBox(width: 20,),
                     Visibility(
                       visible: (contacts.isNotEmpty),
                       child: Expanded(child: CustomButton(
